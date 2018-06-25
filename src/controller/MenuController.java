@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view_controller;
+package controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,20 +39,20 @@ public class MenuController implements Initializable {
     @FXML
     private void handleButtonJouer(ActionEvent event) throws IOException {
         try {
-            mediaBouton = new Media(getClass().getResource("/music/bouton.mp3").toURI().toString());
+            mediaBouton = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         mediaplayerBouton = new MediaPlayer(mediaBouton);
         mediaplayerBouton.play();
         mediaplayerJeu.stop();
-        Principale.changerFenetre("Choix.fxml", getClass());
+        Principale.changerFenetre("/ressource/fxml/Choix.fxml", getClass());
     }
     
     @FXML
     private void handleButtonRegles(ActionEvent event) throws IOException {
         try {
-            mediaBouton = new Media(getClass().getResource("/music/bouton.mp3").toURI().toString());
+            mediaBouton = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -60,7 +60,7 @@ public class MenuController implements Initializable {
         mediaplayerBouton.play();
         
         Stage stage= new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Regles.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Regles.fxml"));
         loader.setController(new ReglesController(stage,mediaplayerJeu));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -72,7 +72,7 @@ public class MenuController implements Initializable {
     @FXML
     private void handleButtonQuitter(ActionEvent event) {
         try {
-            mediaBouton = new Media(getClass().getResource("/music/bouton.mp3").toURI().toString());
+            mediaBouton = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -84,7 +84,7 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            mediaJeu = new Media(getClass().getResource("/music/jeuTheme.mp3").toURI().toString());
+            mediaJeu = new Media(getClass().getResource("/ressource/music/jeuTheme.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }

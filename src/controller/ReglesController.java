@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view_controller;
+package controller;
 
 
 import core.Principale;
@@ -53,7 +53,7 @@ public class ReglesController implements Initializable {
         }));
         
         try {
-            mediaBouton = new Media(getClass().getResource("/music/bouton.mp3").toURI().toString());
+            mediaBouton = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(ReglesController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -64,8 +64,8 @@ public class ReglesController implements Initializable {
     private void clickOnJouer(ActionEvent event) throws IOException {
         mediaplayerBouton.play();
         mediaplayerJeu.stop();
-        stageRegles.close();
-        Principale.changerFenetre("Menu.fxml", getClass());
+        Principale.changerFenetre("/ressource/fxml/Choix.fxml", getClass());
+        stageRegles.hide();
     }
     
     @FXML

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view_controller;
+package controller;
 
 import core.Principale;
 import java.io.IOException;
@@ -36,7 +36,7 @@ public class ChoixController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            media = new Media(getClass().getResource("/music/bouton.mp3").toURI().toString());
+            media = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(ChoixController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -46,32 +46,18 @@ public class ChoixController implements Initializable {
     @FXML
     private void clickOnRetour(ActionEvent event) throws IOException {
         mediaplayer.play();
-        Principale.changerFenetre("Menu.fxml", getClass());
+        Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
     }
     
     @FXML
     private void clickOn2Joueurs(MouseEvent event) throws IOException {
         mediaplayer.play();
-        Stage stage = Principale.getStage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Test.fxml"));
-        //loader.setController(new NiveauController(1));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/view_controller/Style.css").toExternalForm());
-        stage.setScene(scene);
-        stage.show();
+        Principale.changerFenetre("/ressource/fxml/Test.fxml", getClass());
     }
     
     @FXML
     private void clickOnIA(MouseEvent event) throws IOException {
         mediaplayer.play();
-        Stage stage = Principale.getStage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Test.fxml"));
-        //loader.setController(new NiveauController(2));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/view_controller/Style.css").toExternalForm());
-        stage.setScene(scene);
-        stage.show();
+        Principale.changerFenetre("/ressource/fxml/Test.fxml", getClass());
     } 
 }

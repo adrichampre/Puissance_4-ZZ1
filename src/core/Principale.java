@@ -26,12 +26,12 @@ public class Principale extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Principale.primaryStage = stage;
-        Parent root = FXMLLoader.load(getClass().getResource("/view_controller/Menu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ressource/fxml/Menu.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-        scene.getStylesheets().add(getClass().getResource("/view_controller/Style.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/ressource/css/Style.css").toExternalForm());
         stage.setResizable(false);
         stage.setTitle("Puissance 4");
         stage.show();

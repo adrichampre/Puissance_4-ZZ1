@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane id="fondFonce" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="424.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_controller.ChoixController">
+<GridPane id="fondFonce" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="424.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoixController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -40,7 +40,7 @@
          <children>
             <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="25.0" onMouseClicked="#clickOnIA" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/ia.gif" />
+                  <Image url="@../img/ia.gif" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="61.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IA" textAlignment="CENTER">
@@ -54,7 +54,7 @@
          <children>
             <ImageView fitHeight="90.0" fitWidth="200.0" layoutX="26.0" layoutY="23.0" onMouseClicked="#clickOn2Joueurs" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../image/2j.png" />
+                  <Image url="@../img/2j.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="29.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2 Joueurs" textAlignment="CENTER">
@@ -64,6 +64,6 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane id="fondGris" prefHeight="200.0" prefWidth="200.0" stylesheets="@Style.css" GridPane.rowIndex="1" />
+      <AnchorPane id="fondGris" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/Style.css" GridPane.rowIndex="1" />
    </children>
 </GridPane>
