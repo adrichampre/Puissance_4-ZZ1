@@ -10,6 +10,7 @@ package model;
  * @author adrien
  */
 public class Jeu {
+   /* 
     public Jeu()
         {
             int q = 3;
@@ -238,4 +239,5 @@ public class Jeu {
 
             Console.ReadKey();
         }
+*/
 }

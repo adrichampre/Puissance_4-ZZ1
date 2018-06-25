@@ -10,7 +10,7 @@ package model;
  * @author adrien
  */
 public class Grille {
-
+/*
         private Case[,] plateau = new Case[6, 7];
         public Case[,] Plateau
         {
@@ -182,4 +182,5 @@ public class Grille {
             
             return 'N';
         }
+*/
 }

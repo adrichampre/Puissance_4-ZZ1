@@ -8,11 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Puissance4.jar" size="2582" download="eager" />
+    <jar href="Puissance4.jar" size="9819683" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Puissance4" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="launcher.Puissance4"  name="Puissance4" />
+  <jfx:javafx-desc  width="800" height="600" main-class="core.Principale"  name="Puissance4" />
   <update check="always"/>
 </jnlp>

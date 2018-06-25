@@ -1,0 +1,24 @@
+Button {
+    -fx-text-fill: white;
+    -fx-background-color: #e12020;
+    -fx-border-style: solid;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-border-width : 3px;
+    -fx-border-radius : 3px;
+}
+
+Button:hover {
+    -fx-background-color: linear-gradient(#B80B0F, #4A0001);
+}
+
+#fondGris {
+     -fx-background-color: #ABABAB;
+}
+
+#fondFonce {
+     -fx-background-color : #5E5E5E;
+}
+
+#fondRouge {
+    -fx-background-color : #991224;
+}

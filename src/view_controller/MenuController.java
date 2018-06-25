@@ -35,12 +35,12 @@ public class MenuController implements Initializable {
     private MediaPlayer mediaplayerBouton;
     private MediaPlayer mediaplayerJeu;
     
-    public void afficherPageSolo() throws IOException {
-    Stage soloTheme = Principale.getStage();
-    Parent root = FXMLLoader.load(getClass().getResource("Test.fxml"));
+    public void afficherPageChoix() throws IOException {
+    Stage choix = Principale.getStage();
+    Parent root = FXMLLoader.load(getClass().getResource("Choix.fxml"));
     Scene scene = new Scene(root);
     scene.getStylesheets().add(getClass().getResource("/view_controller/Style.css").toExternalForm());
-    soloTheme.setScene(scene);
+    choix.setScene(scene);
     }
     
     @FXML
@@ -53,7 +53,7 @@ public class MenuController implements Initializable {
         mediaplayerBouton = new MediaPlayer(mediaBouton);
         mediaplayerBouton.play();
         mediaplayerJeu.stop();
-        this.afficherPageSolo();
+        this.afficherPageChoix();
     }
     
     @FXML

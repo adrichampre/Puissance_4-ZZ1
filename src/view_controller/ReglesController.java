@@ -66,7 +66,7 @@ public class ReglesController implements Initializable {
         mediaplayerBouton.play();
         mediaplayerJeu.stop();
         stageRegles.hide();
-        menu.afficherPageSolo();
+        menu.afficherPageChoix();
     }
     
     @FXML
