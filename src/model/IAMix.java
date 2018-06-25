@@ -9,6 +9,10 @@ package model;
  *
  * @author adrien
  */
-public class IAMix {
+public class IAMix extends Joueur{
+    
+    public IAMix(String Pseudo) {
+        super(Pseudo);
+    }
     
 }

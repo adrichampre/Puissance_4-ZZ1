@@ -9,6 +9,10 @@ package model;
  *
  * @author adrien
  */
-public class IAFort {
+public class IAFort extends Joueur{
+    
+    public IAFort(String Pseudo) {
+        super(Pseudo);
+    }
     
 }

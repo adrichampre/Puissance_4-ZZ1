@@ -27,17 +27,16 @@ public class Joueur {
 
     public void Jouer(Grille grille)
     {
-        int col;
+        /*int col;
         int a;
-        Console.WriteLine("{0} quel colonne souhaitez vous jouer ?",Nom);
-        col = int.Parse(Console.ReadLine());
-        nbpions -= 1;
+        //Console.WriteLine("{0} quel colonne souhaitez vous jouer ?",Nom);
+        //col = int.Parse(Console.ReadLine());
         a = grille.MettreJeton(col, this);
         while (a != 0)
         {
             Console.WriteLine("Veuillez choisir une autre colonne car la colonne {0} est pleine.", col); 
             col = int.Parse(Console.ReadLine());
             a = grille.MettreJeton(col, this);
-        }
+        }*/
     }
 }

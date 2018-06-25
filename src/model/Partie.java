@@ -9,11 +9,6 @@ package model;
  *
  * @author adrien
  */
-public class IADefense extends Joueur
-{
-
-    public IADefense(String Pseudo) {
-        super(Pseudo);
-    }
-
+public class Partie {
+    
 }
