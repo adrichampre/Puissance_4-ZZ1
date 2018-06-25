@@ -5,6 +5,8 @@
  */
 package core;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +21,7 @@ public class Principale extends Application {
     public static Stage getStage() {
         return primaryStage;
     }
+
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -32,6 +35,28 @@ public class Principale extends Application {
         stage.setResizable(false);
         stage.setTitle("Puissance 4");
         stage.show();
+    }
+    
+    private static Stage getPrimaryStage() {
+        return primaryStage;
+    }
+        
+    public static void changerStage(String window, Class classFenetre) throws Exception{
+        Stage stage = Principale.getPrimaryStage();
+        stage.close();
+        Parent fenetre = FXMLLoader.load(classFenetre.getResource(window));
+        Scene sfenetre = new Scene(fenetre);
+        stage.setScene(sfenetre);
+        stage.show();
+    }
+    
+    public static void changerFenetre(String window, Class classFenetre){
+        try{
+            changerStage(window,classFenetre);
+        }
+        catch(Exception ex){
+            Logger.getLogger(classFenetre.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public static void main(String[] args) {

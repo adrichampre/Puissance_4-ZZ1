@@ -46,11 +46,7 @@ public class ChoixController implements Initializable {
     @FXML
     private void clickOnRetour(ActionEvent event) throws IOException {
         mediaplayer.play();
-        Stage stage = Principale.getStage();
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/view_controller/Style.css").toExternalForm());
-        stage.setScene(scene);
+        Principale.changerFenetre("Menu.fxml", getClass());
     }
     
     @FXML

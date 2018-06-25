@@ -6,6 +6,7 @@
 package view_controller;
 
 
+import core.Principale;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -30,15 +31,13 @@ import javafx.stage.Stage;
 public class ReglesController implements Initializable {
     
     private final Stage stageRegles;
-    private final MenuController menu;
     private Media mediaBouton;
     private MediaPlayer mediaplayerBouton;
     private MediaPlayer mediaplayerJeu;
     
-    public ReglesController(Stage stageRegles,MenuController menu,MediaPlayer mediaplayerJeu) {
+    public ReglesController(Stage stageRegles,MediaPlayer mediaplayerJeu) {
         this.mediaplayerJeu=mediaplayerJeu;
         this.stageRegles=stageRegles;
-        this.menu=menu;
         stageRegles.setMinWidth(250);
         stageRegles.setMinHeight(400);
     }
@@ -65,14 +64,14 @@ public class ReglesController implements Initializable {
     private void clickOnJouer(ActionEvent event) throws IOException {
         mediaplayerBouton.play();
         mediaplayerJeu.stop();
-        stageRegles.hide();
-        menu.afficherPageChoix();
+        stageRegles.close();
+        Principale.changerFenetre("Menu.fxml", getClass());
     }
     
     @FXML
     private void clickOnRetour(ActionEvent event) throws IOException {
         mediaplayerBouton.play();
-        stageRegles.hide();
+        stageRegles.close();
     }
 }
     

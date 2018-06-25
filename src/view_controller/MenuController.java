@@ -26,7 +26,7 @@ import javafx.scene.media.MediaPlayer;
 /**
  * FXML Controller class
  *
- * @author loudu
+ * @author adchampred
  */
 public class MenuController implements Initializable {
     
@@ -35,13 +35,6 @@ public class MenuController implements Initializable {
     private MediaPlayer mediaplayerBouton;
     private MediaPlayer mediaplayerJeu;
     
-    public void afficherPageChoix() throws IOException {
-    Stage choix = Principale.getStage();
-    Parent root = FXMLLoader.load(getClass().getResource("Choix.fxml"));
-    Scene scene = new Scene(root);
-    scene.getStylesheets().add(getClass().getResource("/view_controller/Style.css").toExternalForm());
-    choix.setScene(scene);
-    }
     
     @FXML
     private void handleButtonJouer(ActionEvent event) throws IOException {
@@ -53,7 +46,7 @@ public class MenuController implements Initializable {
         mediaplayerBouton = new MediaPlayer(mediaBouton);
         mediaplayerBouton.play();
         mediaplayerJeu.stop();
-        this.afficherPageChoix();
+        Principale.changerFenetre("Choix.fxml", getClass());
     }
     
     @FXML
@@ -65,12 +58,12 @@ public class MenuController implements Initializable {
         }
         mediaplayerBouton = new MediaPlayer(mediaBouton);
         mediaplayerBouton.play();
+        
         Stage stage= new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Regles.fxml"));
-        loader.setController(new ReglesController(stage,this,mediaplayerJeu));
+        loader.setController(new ReglesController(stage,mediaplayerJeu));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/view_controller/Style.css").toExternalForm());
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.show();
@@ -85,7 +78,7 @@ public class MenuController implements Initializable {
         }
         mediaplayerBouton = new MediaPlayer(mediaBouton);
         mediaplayerBouton.play();
-        Principale.getStage().hide();
+        Principale.getStage().close();
     }
     
     @Override
