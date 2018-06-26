@@ -41,7 +41,6 @@ public class Grille {
         }
 
 
-
         public Boolean GagnerLigne()
         {
             int result = 0;

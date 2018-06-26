@@ -36,13 +36,9 @@ public class Principale extends Application {
         stage.setTitle("Puissance 4");
         stage.show();
     }
-    
-    private static Stage getPrimaryStage() {
-        return primaryStage;
-    }
         
     public static void changerStage(String window, Class classFenetre) throws Exception{
-        Stage stage = Principale.getPrimaryStage();
+        Stage stage = Principale.getStage();
         stage.close();
         Parent fenetre = FXMLLoader.load(classFenetre.getResource(window));
         Scene sfenetre = new Scene(fenetre);

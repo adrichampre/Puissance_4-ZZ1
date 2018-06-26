@@ -8,9 +8,12 @@ package controller;
 import core.Principale;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,13 +37,16 @@ public class GrilleController implements Initializable {
     private Joueur j2;
     private Jeu jeu;
     
+    public GrilleController(Joueur j1, Joueur j2)
+    {
+        this.j1 = j1;
+        this.j2 = j2;
+    }
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        this.j1 = new Joueur("Joueur 1", 'R');
-        this.j2 = new Joueur("Joueur 2", 'J');
         this.jeu = new Jeu(this.j1,this.j2);
     }
     
@@ -65,7 +71,8 @@ public class GrilleController implements Initializable {
                 img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));
                 if(jeu.Gagner())
                 {
-                    System.out.println("Victoire de "+jeu.getJCourant().getPseudo());
+                    showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
+                    Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
                 }
                 else
                 {
@@ -80,6 +87,17 @@ public class GrilleController implements Initializable {
     private void clickRetour(MouseEvent event) throws IOException {
         Principale.changerFenetre("/ressource/fxml/Choix.fxml", getClass());
     } 
+
+    private Optional<ButtonType> showMessage(Alert.AlertType type,String header,String message,ButtonType... lesBoutonsDifferents){
+        Alert laFenetre = new Alert(type);
+        laFenetre.setHeaderText(header);
+        laFenetre.setContentText(message);
+        if (lesBoutonsDifferents.length > 0) {
+            laFenetre.getButtonTypes().clear();
+            laFenetre.getButtonTypes().addAll(lesBoutonsDifferents);
+        }
+        return laFenetre.showAndWait();
+    }
     
     
 }
