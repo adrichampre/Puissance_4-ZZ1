@@ -14,9 +14,10 @@ import javafx.beans.property.StringProperty;
  */
 public class Joueur {
     
-    public Joueur(String Pseudo)
+    public Joueur(String Pseudo, char Couleur)
     {
         setPseudo(Pseudo);
+        setCouleur(Couleur);
     }
     
     protected StringProperty pseudo = new SimpleStringProperty();
@@ -24,19 +25,12 @@ public class Joueur {
         private void setPseudo(String pseudo){ this.pseudo.set(pseudo); }
         public StringProperty pseudoProperty(){ return pseudo; }
         
-
-    public void Jouer(Grille grille)
+    protected char couleur;
+    public char getCouleur(){ return couleur; }
+    private void setCouleur(char couleur)
     {
-        /*int col;
-        int a;
-        //Console.WriteLine("{0} quel colonne souhaitez vous jouer ?",Nom);
-        //col = int.Parse(Console.ReadLine());
-        a = grille.MettreJeton(col, this);
-        while (a != 0)
-        {
-            Console.WriteLine("Veuillez choisir une autre colonne car la colonne {0} est pleine.", col); 
-            col = int.Parse(Console.ReadLine());
-            a = grille.MettreJeton(col, this);
-        }*/
+        if(couleur == 'R' || couleur == 'J')
+            this.couleur = couleur;
     }
+
 }

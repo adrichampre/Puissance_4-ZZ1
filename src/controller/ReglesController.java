@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author loudu
+ * @author adchampred
  */
 public class ReglesController implements Initializable {
     
