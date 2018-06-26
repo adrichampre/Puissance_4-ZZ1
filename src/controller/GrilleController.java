@@ -5,6 +5,7 @@
  */
 package controller;
 
+import core.Principale;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -74,5 +75,11 @@ public class GrilleController implements Initializable {
         }
         
     }
+    
+    @FXML
+    private void clickRetour(MouseEvent event) throws IOException {
+        Principale.changerFenetre("/ressource/fxml/Choix.fxml", getClass());
+    } 
+    
     
 }
