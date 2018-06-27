@@ -22,3 +22,7 @@ Button:hover {
 #fondRouge {
     -fx-background-color : #991224;
 }
+
+.grille {
+	-fx-background-image : url('/ressource/img/Grille.PNG');
+}

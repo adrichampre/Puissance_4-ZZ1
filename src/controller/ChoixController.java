@@ -60,17 +60,17 @@ public class ChoixController implements Initializable {
         mediaplayer.play();
         
         
-        Principale.changerFenetre("/ressource/fxml/Grillev2.fxml", getClass());
+        //Principale.changerFenetre("/ressource/fxml/Grillev2.fxml", getClass());
        
-        /*Stage stage = Principale.getStage();
+        Stage stage = Principale.getStage();
         stage.close();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Grillev2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Grille.fxml"));
         loader.setController(new GrilleController(new Joueur("Joueur 1", 'R'),new Joueur("Joueur 2", 'J')));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();*/
+        stage.show();
     }
     
     @FXML
