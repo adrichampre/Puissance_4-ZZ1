@@ -10,82 +10,38 @@ package model;
  * @author adrien
  */
 public class Grille {
-/*
-        private Case[,] plateau = new Case[6, 7];
-        public Case[,] Plateau
-        {
-            get { return plateau; }
-            set
-            {
-                if (value != null)
-                {
-                    plateau = value;
-                }
-                else Console.WriteLine("null");
-            }
 
-        }
+        private Case[][] grille;
+        public Case[][] getGrille(){ return grille; }
 
 
         public Grille()
         {
-            for (int i = 0; i <= 6; i++)
-            {
-                for (int k = 0; k <= 5; k++)
-                {
-                    Plateau[k, i] = new Case(false, ' ');
-
-                }
-            }
-
-        }
-
-        public void affich()
-        {
-
-            Console.WriteLine("  |  1  |  2  |  3  |  4  |  5  |  6  |  7  |");
-            Console.WriteLine("6 |  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |", Plateau[5, 0].Couleur, Plateau[5, 1].Couleur, Plateau[5, 2].Couleur, Plateau[5, 3].Couleur, Plateau[5, 4].Couleur, Plateau[5, 5].Couleur, Plateau[5, 6].Couleur);
-            Console.WriteLine("5 |  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |", Plateau[4, 0].Couleur, Plateau[4, 1].Couleur, Plateau[4, 2].Couleur, Plateau[4, 3].Couleur, Plateau[4, 4].Couleur, Plateau[4, 5].Couleur, Plateau[4, 6].Couleur);
-            Console.WriteLine("4 |  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |", Plateau[3, 0].Couleur, Plateau[3, 1].Couleur, Plateau[3, 2].Couleur, Plateau[3, 3].Couleur, Plateau[3, 4].Couleur, Plateau[3, 5].Couleur, Plateau[3, 6].Couleur);
-            Console.WriteLine("3 |  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |", Plateau[2, 0].Couleur, Plateau[2, 1].Couleur, Plateau[2, 2].Couleur, Plateau[2, 3].Couleur, Plateau[2, 4].Couleur, Plateau[2, 5].Couleur, Plateau[2, 6].Couleur);
-            Console.WriteLine("2 |  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |", Plateau[1, 0].Couleur, Plateau[1, 1].Couleur, Plateau[1, 2].Couleur, Plateau[1, 3].Couleur, Plateau[1, 4].Couleur, Plateau[1, 5].Couleur, Plateau[1, 6].Couleur);
-            Console.WriteLine("1 |  {0}  |  {1}  |  {2}  |  {3}  |  {4}  |  {5}  |  {6}  |", Plateau[0, 0].Couleur, Plateau[0, 1].Couleur, Plateau[0, 2].Couleur, Plateau[0, 3].Couleur, Plateau[0, 4].Couleur, Plateau[0, 5].Couleur, Plateau[0, 6].Couleur);
-        }
-
-
-
-        public int MettreJeton(int col, Joueur j)
-        {
-            col -= 1;
+            grille = new Case[6][7];
             for (int i = 0; i < 6; i++)
             {
-                if (Plateau[i, col].Jeton == false)
+                for (int j = 0; j < 7; j++)
                 {
-                    Plateau[i, col].Couleur = j.Couleur;
-                    Plateau[i, col].Jeton = true;
-                    return 0;
+                    grille[i][j] = new Case('0');
                 }
             }
-            return -1;
-
         }
 
-
-        public bool Gagner()
+        public Boolean mettreJeton(int col, char couleur)
         {
-            if (GagnerLigne() == 'R' || GagnerCol() == 'R' || GagnerDiago1() == 'R' || GagnerDiago2() == 'R')
+            for (int i = 0; i < 6; i++)
             {
-                return true;
-            }
-            if (GagnerLigne() == 'J' || GagnerCol() =='J' || GagnerDiago1() == 'J' || GagnerDiago2() == 'R')
-            {
-                return true;
+                if (grille[i][col].getJeton() == false)
+                {
+                    grille[i][col].mettreJeton(couleur);
+                    return true;
+                }
             }
             return false;
         }
 
 
-        public char GagnerLigne()
+        public Boolean GagnerLigne()
         {
             int result = 0;
             for (int line = 0; line < 6; line++)
@@ -94,22 +50,22 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (Plateau[line, col].Couleur == Plateau[line, col + k].Couleur && Plateau[line, col + k].Jeton == true)
+                        if (grille[line][col].getCouleur() == grille[line][col + k].getCouleur() && grille[line][col + k].getJeton() == true)
                         {
                             result++;
                         }
                         if (result == 3)
                         {
-                            return Plateau[line, col].Couleur;
+                            return true;
                         }
                     }
                     result = 0;
                 }
             }
-            return 'N';
+            return false;
         }
 
-        public char GagnerCol()
+        public Boolean GagnerCol()
         {
             int result = 0;
             for (int col = 0; col < 7; col++)
@@ -118,23 +74,23 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (Plateau[line, col].Couleur == Plateau[line + k, col].Couleur && Plateau[line + k, col].Jeton == true)
+                        if (grille[line][col].getCouleur() == grille[line + k][col].getCouleur() && grille[line + k][col].getJeton() == true)
                         {
                             result++;
                         }
                         if (result == 3)
                         {
-                            return Plateau[line, col].Couleur;
+                            return true;
                         }
                     }
                     result = 0;
                 }
             }
-            return 'N';
+            return false;
         }
 
 
-        public char GagnerDiago1()
+        public Boolean GagnerDiago1()
         {
             int result = 0;
 
@@ -145,20 +101,20 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (Plateau[line, col].Couleur == Plateau[line + k, col + k].Couleur && Plateau[line + k, col + k].Jeton == true)
+                        if (grille[line][col].getCouleur() == grille[line + k][col + k].getCouleur() && grille[line + k][col + k].getJeton() == true)
                         {
                             result++;
                         }
                         if (result == 3)
-                            return Plateau[line, col].Couleur;
+                            return true;
                     }
                     result = 0;
                 }
             }
-            return 'N';
+            return false;
         }
 
-        public char GagnerDiago2()
+        public Boolean GagnerDiago2()
         {
             // Diago du haut vers le bas
             int result = 0;
@@ -168,19 +124,17 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (Plateau[line, col].Couleur == Plateau[line - k, col + k].Couleur && Plateau[line - k, col + k].Jeton == true)
+                        if (grille[line][col].getCouleur() == grille[line - k][col + k].getCouleur() && grille[line - k][col + k].getJeton() == true)
                         {
                             result++;
-                            Console.WriteLine("Diago haut vers bas !");
                         }
                         if (result == 3)
-                            return Plateau[line, col].Couleur;
+                            return true;
                     }
                     result = 0;
                 }
             }
             
-            return 'N';
+            return false;
         }
-*/
 }

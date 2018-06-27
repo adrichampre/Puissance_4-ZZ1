@@ -5,15 +5,71 @@
  */
 package model;
 
+import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author adrien
  */
 public class Jeu {
-   /* 
-    public Jeu()
-        {
-            int q = 3;
+    
+    private Joueur j1;
+    public Joueur getJ1(){ return j1; }
+    
+    private Joueur j2;
+    public Joueur getJ2(){ return j2; }
+    
+    private Joueur jCourant;
+    public Joueur getJCourant(){ return jCourant; }
+    
+    private StringProperty jTour = new SimpleStringProperty();
+    public StringProperty getJTour(){ return jTour; }
+    
+    private Grille grille;
+    
+    public Jeu(Joueur j1, Joueur j2)
+    {
+        this.j1 = j1;
+        this.j2 = j2;
+        this.grille = new Grille();
+        this.jCourant = j1;
+        jTour.set(jCourant.getPseudo());
+    }
+    
+    public void changementTour() {
+        if (this.jCourant.equals(j1)) {
+            this.jCourant = j2;
+        } else {
+            this.jCourant = j1;
+        }
+        jTour.set(jCourant.getPseudo());
+    }
+        
+    public int jouerJoueur(int y)
+    {
+        return jCourant.jouer(grille,y);
+    }
+    
+    public int firstCase(int y)
+    {
+        for (int i = 0; i < 6; i++) {
+            if(!grille.getGrille()[i][y].getJeton())
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public Boolean Gagner()
+    {
+        return (grille.GagnerLigne() || grille.GagnerCol() || grille.GagnerDiago1() || grille.GagnerDiago2());
+
+    }
+    
+            /*int q = 3;
             while (q == 3)
             {
                 Console.WriteLine("Combien de joueur êtes vous ?");
@@ -237,7 +293,5 @@ public class Jeu {
             }
             Console.WriteLine("\nTaper sur une touche pour continuer...");
 
-            Console.ReadKey();
-        }
-*/
+            Console.ReadKey();*/
 }

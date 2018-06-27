@@ -11,8 +11,8 @@ package model;
  */
 public class IAMix extends Joueur{
     
-    public IAMix(String Pseudo) {
-        super(Pseudo);
+    public IAMix(String Pseudo, char Couleur) {
+        super(Pseudo,Couleur);
     }
     
 }

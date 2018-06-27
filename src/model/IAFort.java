@@ -11,8 +11,8 @@ package model;
  */
 public class IAFort extends Joueur{
     
-    public IAFort(String Pseudo) {
-        super(Pseudo);
+    public IAFort(String Pseudo, char Couleur) {
+        super(Pseudo, Couleur);
     }
     
 }

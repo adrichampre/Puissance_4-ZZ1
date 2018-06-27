@@ -43,4 +43,10 @@ public class Case {
                 setJeton(true);
             }
         }
+        
+        public void mettreJeton(char couleur)
+        {
+            setCouleur(couleur);
+            setJeton(true);
+        }
 }
