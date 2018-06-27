@@ -12,8 +12,8 @@ package model;
 public class IADefense extends Joueur
 {
 
-    public IADefense(String Pseudo) {
-        super(Pseudo);
+    public IADefense(String Pseudo, char Couleur) {
+        super(Pseudo, Couleur);
     }
 
 }

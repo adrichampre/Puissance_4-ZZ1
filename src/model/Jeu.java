@@ -47,9 +47,9 @@ public class Jeu {
         jTour.set(jCourant.getPseudo());
     }
         
-    public Boolean jouer(int y)
+    public int jouerJoueur(int y)
     {
-        return grille.mettreJeton(y, jCourant.getCouleur());
+        return jCourant.jouer(grille,y);
     }
     
     public int firstCase(int y)

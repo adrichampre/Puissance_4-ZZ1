@@ -33,4 +33,10 @@ public class Joueur {
             this.couleur = couleur;
     }
 
+    public int jouer(Grille grille, int y)
+    {
+        grille.mettreJeton(y, couleur);
+        
+        return y;
+    }
 }

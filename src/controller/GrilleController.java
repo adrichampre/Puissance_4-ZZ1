@@ -17,7 +17,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import model.Joueur;
 import model.Jeu;
@@ -65,18 +64,32 @@ public class GrilleController implements Initializable {
         System.out.println("y :"+ y + " x:" + x);
         if(x != -1)
         {
-            if(jeu.jouer(y))
+            jeu.jouerJoueur(y);
+            ImageView img = (ImageView) gridPane.getChildren().get(x*7 + y);
+            img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));
+            if(jeu.Gagner())
             {
-                ImageView img = (ImageView) gridPane.getChildren().get(x*7 + y);
-                img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));
-                if(jeu.Gagner())
+                showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
+                Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
+            }
+            else
+            {
+                jeu.changementTour();
+                if(jeu.getJCourant().getClass() != Joueur.class)
                 {
-                    showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
-                    Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
-                }
-                else
-                {
-                    jeu.changementTour();
+                    y = jeu.jouerJoueur(y);
+                    x = jeu.firstCase(y)-1;
+                    img = (ImageView) gridPane.getChildren().get(x*7 + y);
+                    img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));
+                    if(jeu.Gagner())
+                    {
+                        showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
+                        Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
+                    }
+                    else
+                    {
+                        jeu.changementTour();
+                    }
                 }
             }
         }
