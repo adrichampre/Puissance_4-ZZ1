@@ -67,7 +67,7 @@ public class GrilleController implements Initializable {
             jeu.jouerJoueur(y);
             ImageView img = (ImageView) gridPane.getChildren().get(x*7 + y);
             img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));
-            if(jeu.Gagner())
+            if(jeu.gagner())
             {
                 showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
                 Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
@@ -82,7 +82,7 @@ public class GrilleController implements Initializable {
                     System.out.println("IA : x:"+x+" y:"+y);
                     img = (ImageView) gridPane.getChildren().get(x*7 + y);
                     img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));
-                    if(jeu.Gagner())
+                    if(jeu.gagner())
                     {
                         showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
                         Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());

@@ -62,6 +62,7 @@ public class Jeu {
                         return i;
                     }
                 }
+                return 0;
             }
             else
             {
@@ -72,8 +73,7 @@ public class Jeu {
                     }
                 }
             }
-        
-            
+               
         return -1;
     }
     
@@ -88,7 +88,7 @@ public class Jeu {
         return true;
     }
     
-    public Boolean Gagner()
+    public Boolean gagner()
     {
         return (grille.GagnerLigne() || grille.GagnerCol() || grille.GagnerDiago1() || grille.GagnerDiago2());
 

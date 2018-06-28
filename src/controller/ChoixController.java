@@ -26,6 +26,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.IAAlea;
+import model.IADefense;
 import model.IAFort;
 import model.Joueur;
 import model.Jeu;
@@ -81,7 +82,7 @@ public class ChoixController implements Initializable {
         stage.close();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Grille.fxml"));
-        loader.setController(new GrilleController(new Joueur("Joueur 1", 'R'),new IAFort("Joueur 2", 'J')));
+        loader.setController(new GrilleController(new Joueur("Joueur 1", 'R'),new IADefense("Skynet", 'J')));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);

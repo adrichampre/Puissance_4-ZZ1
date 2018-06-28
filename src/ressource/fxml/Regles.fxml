@@ -20,7 +20,7 @@
       </Text>
    </top>
    <center>
-      <TextArea fx:id="zoneTexte" editable="false" prefHeight="295.0" prefWidth="190.0" text="      EscapeGame est un jeu de plateforme dont le but est d'arrivée jusqu'à la porte avant le temps imparti.&#10;&#10;      Vous devez sauter sur les différentes plateformes sachant que vous pouvez passer à travers celles-ci lorsque vous rentrez en collision avec le bas de la plateforme.&#10;&#10;      Attention, vous pouvez tomber d'une plateforme alors regardez bien où vous marchez.&#10;&#10;      Pour jouer il vu suffit d'utiliser les touches du claviers qui vous sont spécifiées en bas de cette page.&#10;&#10;Controles :&#10;Left Key : déplacement à gauche&#10;Rigth Key : déplacement à droite&#10;Space : Saut" wrapText="true" BorderPane.alignment="CENTER">
+      <TextArea fx:id="zoneTexte" editable="false" prefHeight="295.0" prefWidth="190.0" wrapText="true" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="20.0" right="20.0" top="15.0" />
          </BorderPane.margin>

@@ -18,10 +18,10 @@ public class IADefense extends Joueur
         super(Pseudo, Couleur);
     }
 
-    /*@Override
+    @Override
     public int jouer(Grille grille, int y)
     {
-        int poids[] = new int[6];
+        int poids[] = new int[7];
         int max=0;
         
         for (int col = 0; col < 7; col++) {
@@ -30,16 +30,18 @@ public class IADefense extends Joueur
                 if(!grille.getGrille()[line][col].getJeton())
                 {
                     poids[col] = calculPoidsPoint(grille,line,col);
+                    break;
                 }
             }
         }
         
-        for (int i = 1; i < poids.length-1; i++) {
+        for (int i = 1; i < poids.length; i++) {
             if(poids[max] < poids[i])
             {
                 max = i;
             }
         }
+        grille.mettreJeton(max, couleur);
         return max;
     }
     
@@ -57,29 +59,16 @@ public class IADefense extends Joueur
     
     private int calculPoidsHorizontal(Grille grille, int line, int col)
     {
-        int poidsJ=0;
-        int poidsR=0;
+        int poids=0;
         
         for (int i = 1; i < 4; i++) {
             if( (col-i) >= 0 )
             {
-                if(grille.getGrille()[line][col-i].getCouleur() == 'R')
+                if(grille.getGrille()[line][col-i].getCouleur() != couleur && grille.getGrille()[line][col-i].getCouleur() != '0')
                 {
-                    if(poidsJ>0)
-                    {
-                        break;
-                    }
-                    poidsR++;
+                    poids++;
                 }
-                if(grille.getGrille()[line][col-i].getCouleur() == 'J')
-                {
-                    if(poidsR>0)
-                    {
-                        break;
-                    }
-                    poidsJ++;
-                }
-                if(grille.getGrille()[line][col-i].getCouleur() == '0')
+                else
                     break;
             }
             else
@@ -89,92 +78,54 @@ public class IADefense extends Joueur
         for (int i = 1; i < 4; i++) {
             if( (col+i) < 7 )
             {
-                if(grille.getGrille()[line][col+i].getCouleur() == 'R')
+                if(grille.getGrille()[line][col+i].getCouleur() != couleur && grille.getGrille()[line][col+i].getCouleur() != '0')
                 {
-                    if(poidsJ>0)
-                    {
-                        break;
-                    }
-                    poidsR++;
+                    poids++;
                 }
-                if(grille.getGrille()[line][col+i].getCouleur() == 'J')
-                {
-                    if(poidsR>0)
-                    {
-                        break;
-                    }
-                    poidsJ++;
-                }
-                if(grille.getGrille()[line][col+i].getCouleur() == '0')
+                else
                     break;
             }
             else
                 break;
         }
         
-        return max(poidsR,poidsJ);
+        return poids;
     }
     
     
     private int calculPoidsVertical(Grille grille, int line, int col)
     {
-        int poidsJ=0;
-        int poidsR=0;
+        int poids=0;
         
         for (int i = 1; i < 4; i++) {
             if( (line-i) >= 0 )
             {
-                if(grille.getGrille()[line-i][col].getCouleur() == 'R')
+                if(grille.getGrille()[line-i][col].getCouleur() != couleur && grille.getGrille()[line-i][col].getCouleur() != '0')
                 {
-                    if(poidsJ>0)
-                    {
-                        break;
-                    }
-                    poidsR++;
+                    poids++;
                 }
-                if(grille.getGrille()[line-i][col].getCouleur() == 'J')
-                {
-                    if(poidsR>0)
-                    {
-                        break;
-                    }
-                    poidsJ++;
-                }
-                if(grille.getGrille()[line-i][col].getCouleur() == '0')
+                else
                     break;
             }
             else
                 break;
         }
-        return max(poidsR,poidsJ);
+        return poids;
    
     }
     
     private int calculPoidsDiago1(Grille grille, int line, int col)
     {
-        int poidsJ=0;
-        int poidsR=0;
+        int poids=0;
         
         for (int i = 1; i < 4; i++) {
             if( (col-i) >= 0 && (line+i) < 6 )
             {
-                if(grille.getGrille()[line+i][col-i].getCouleur() == 'R')
+                if(grille.getGrille()[line+i][col-i].getCouleur() != couleur && grille.getGrille()[line+i][col-i].getCouleur() != '0')
                 {
-                    if(poidsJ>0)
-                    {
-                        break;
-                    }
-                    poidsR++;
+                    poids++;
                 }
-                if(grille.getGrille()[line+i][col-i].getCouleur() == 'J')
-                {
-                    if(poidsR>0)
-                    {
-                        break;
-                    }
-                    poidsJ++;
-                }
-                if(grille.getGrille()[line+i][col-i].getCouleur() == '0')
+                else
                     break;
             }
             else
@@ -184,57 +135,32 @@ public class IADefense extends Joueur
         for (int i = 1; i < 4; i++) {
             if( (col+i) < 7 && (line-i) >= 0 )
             {
-                if(grille.getGrille()[line-i][col+i].getCouleur() == 'R')
+                if(grille.getGrille()[line-i][col+i].getCouleur() != couleur && grille.getGrille()[line-i][col+i].getCouleur() != '0')
                 {
-                    if(poidsJ>0)
-                    {
-                        break;
-                    }
-                    poidsR++;
+                    poids++;
                 }
-                if(grille.getGrille()[line-i][col+i].getCouleur() == 'J')
-                {
-                    if(poidsR>0)
-                    {
-                        break;
-                    }
-                    poidsJ++;
-                }
-                if(grille.getGrille()[line-i][col+i].getCouleur() == '0')
+                else
                     break;
             }
             else
                 break;
         }
         
-        return max(poidsR,poidsJ);
+        return poids;
     }
     
     private int calculPoidsDiago2(Grille grille, int line, int col)
     {
-        int poidsJ=0;
-        int poidsR=0;
+        int poids=0;
         
         for (int i = 1; i < 4; i++) {
             if( (col+i) < 7 && (line+i) < 6 )
             {
-                if(grille.getGrille()[line+i][col+i].getCouleur() == 'R')
+                if(grille.getGrille()[line+i][col+i].getCouleur() != couleur && grille.getGrille()[line+i][col+i].getCouleur() != '0')
                 {
-                    if(poidsJ>0)
-                    {
-                        break;
-                    }
-                    poidsR++;
+                    poids++;
                 }
-                if(grille.getGrille()[line+i][col+i].getCouleur() == 'J')
-                {
-                    if(poidsR>0)
-                    {
-                        break;
-                    }
-                    poidsJ++;
-                }
-                if(grille.getGrille()[line+i][col+i].getCouleur() == '0')
+                else
                     break;
             }
             else
@@ -244,29 +170,17 @@ public class IADefense extends Joueur
         for (int i = 1; i < 4; i++) {
             if( (col-i) >= 0 && (line-i) >= 0 )
             {
-                if(grille.getGrille()[line-i][col-i].getCouleur() == 'R')
+                if(grille.getGrille()[line-i][col-i].getCouleur() != couleur && grille.getGrille()[line-i][col-i].getCouleur() != '0')
                 {
-                    if(poidsJ>0)
-                    {
-                        break;
-                    }
-                    poidsR++;
+                    poids++;
                 }
-                if(grille.getGrille()[line-i][col-i].getCouleur() == 'J')
-                {
-                    if(poidsR>0)
-                    {
-                        break;
-                    }
-                    poidsJ++;
-                }
-                if(grille.getGrille()[line-i][col-i].getCouleur() == '0')
+                else
                     break;
             }
             else
                 break;
         }
         
-        return max(poidsR,poidsJ);
-    }*/
+        return poids;
+    }
 }
