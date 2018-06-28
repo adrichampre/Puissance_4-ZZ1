@@ -20,7 +20,7 @@
       </Text>
    </top>
    <center>
-      <TextArea fx:id="zoneTexte" editable="false" prefHeight="295.0" prefWidth="190.0" wrapText="true" BorderPane.alignment="CENTER">
+      <TextArea fx:id="zoneTexte" editable="false" prefHeight="295.0" prefWidth="190.0" text="Pour gagner une partie de puissance 4, il suffit d’être le premier à aligner 4 jetons de sa couleur horizontalement, verticalement et diagonalement.Si lors d’une partie, tous les jetons sont joués sans qu’il y est d’alignement de jetons, la partie est déclaré nulle." wrapText="true" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="20.0" right="20.0" top="15.0" />
          </BorderPane.margin>

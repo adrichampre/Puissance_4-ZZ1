@@ -9,8 +9,6 @@ import core.Principale;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,13 +21,8 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.IAAlea;
-import model.IADefense;
-import model.IAFort;
 import model.Joueur;
-import model.Jeu;
 
 /**
  * FXML Controller class
@@ -77,14 +70,5 @@ public class ChoixController implements Initializable {
         mediaplayer.play();
         
         Principale.changerFenetre("/ressource/fxml/IA.fxml", getClass());
-        /*Stage stage = Principale.getStage();
-        stage.close();
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Grille.fxml"));
-        loader.setController(new GrilleController(new Joueur("Joueur 1", 'R'),new IADefense("IA", 'J')));
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();*/
     } 
 }

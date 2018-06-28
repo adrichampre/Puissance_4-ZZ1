@@ -11,18 +11,18 @@ package model;
  */
 public class Grille {
 
-        private Case[][] grille;
-        public Case[][] getGrille(){ return grille; }
+        private Case[][] plateau;
+        public Case[][] getGrille(){ return plateau; }
 
 
         public Grille()
         {
-            grille = new Case[6][7];
+            plateau = new Case[6][7];
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    grille[i][j] = new Case('0');
+                    plateau[i][j] = new Case('0');
                 }
             }
         }
@@ -31,9 +31,9 @@ public class Grille {
         {
             for (int i = 0; i < 6; i++)
             {
-                if (grille[i][col].getJeton() == false)
+                if (plateau[i][col].getJeton() == false)
                 {
-                    grille[i][col].mettreJeton(couleur);
+                    plateau[i][col].mettreJeton(couleur);
                     return true;
                 }
             }
@@ -50,7 +50,7 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (grille[line][col].getCouleur() == grille[line][col + k].getCouleur() && grille[line][col + k].getJeton() == true)
+                        if (plateau[line][col].getCouleur() == plateau[line][col + k].getCouleur() && plateau[line][col + k].getJeton() == true)
                         {
                             result++;
                         }
@@ -74,7 +74,7 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (grille[line][col].getCouleur() == grille[line + k][col].getCouleur() && grille[line + k][col].getJeton() == true)
+                        if (plateau[line][col].getCouleur() == plateau[line + k][col].getCouleur() && plateau[line + k][col].getJeton() == true)
                         {
                             result++;
                         }
@@ -101,7 +101,7 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (grille[line][col].getCouleur() == grille[line + k][col + k].getCouleur() && grille[line + k][col + k].getJeton() == true)
+                        if (plateau[line][col].getCouleur() == plateau[line + k][col + k].getCouleur() && plateau[line + k][col + k].getJeton() == true)
                         {
                             result++;
                         }
@@ -124,7 +124,7 @@ public class Grille {
                 {
                     for (int k = 1; k < 4; k++)
                     {
-                        if (grille[line][col].getCouleur() == grille[line - k][col + k].getCouleur() && grille[line - k][col + k].getJeton() == true)
+                        if (plateau[line][col].getCouleur() == plateau[line - k][col + k].getCouleur() && plateau[line - k][col + k].getJeton() == true)
                         {
                             result++;
                         }

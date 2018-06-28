@@ -37,7 +37,7 @@ public class Principale extends Application {
         stage.show();
     }
         
-    public static void changerStage(String window, Class classFenetre) throws Exception{
+    private static void changerStage(String window, Class classFenetre) throws Exception{
         Stage stage = Principale.getStage();
         stage.close();
         Parent fenetre = FXMLLoader.load(classFenetre.getResource(window));
