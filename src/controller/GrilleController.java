@@ -61,8 +61,9 @@ public class GrilleController implements Initializable {
             y = 0;
         }
         x = jeu.firstCase(y);
-        if(x != -1)
+        if(x > -1)
         {
+            System.out.println("Joueur : x:"+x+" y:"+y);
             jeu.jouerJoueur(y);
             ImageView img = (ImageView) gridPane.getChildren().get(x*7 + y);
             img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));
@@ -77,7 +78,7 @@ public class GrilleController implements Initializable {
                 if(jeu.getJCourant().getClass() != Joueur.class)
                 {
                     y = jeu.jouerJoueur(y);
-                    x = jeu.firstCase(y)-1;
+                    x = jeu.firstCase(y);
                     System.out.println("IA : x:"+x+" y:"+y);
                     img = (ImageView) gridPane.getChildren().get(x*7 + y);
                     img.setImage(new Image("/ressource/img/"+jeu.getJCourant().getCouleur()+".png"));

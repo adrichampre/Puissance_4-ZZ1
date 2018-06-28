@@ -53,12 +53,27 @@ public class Jeu {
     
     public int firstCase(int y)
     {
-        for (int i = 0; i < 6; i++) {
-            if(!grille.getGrille()[i][y].getJeton())
+        
+            if(jCourant.getClass() != Joueur.class)
             {
-                return i;
+                for (int i = 5; i >= 0; i--) {
+                    if(grille.getGrille()[i][y].getJeton())
+                    {
+                        return i;
+                    }
+                }
             }
-        }
+            else
+            {
+                for (int i = 0; i < 6; i++) {
+                    if(!grille.getGrille()[i][y].getJeton())
+                    {
+                        return i;
+                    }
+                }
+            }
+        
+            
         return -1;
     }
     
