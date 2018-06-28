@@ -10,8 +10,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane id="fondFonce" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="424.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoixController">
-  <columnConstraints>
+<GridPane id="fondFonce" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="450.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IAController">
+    <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,9 +25,9 @@
    <children>
       <AnchorPane id="fondGris" prefHeight="74.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Text fill="WHITE" layoutX="13.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENU" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="-5.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIVEAUX" textAlignment="CENTER" wrappingWidth="157.66552734375">
                <font>
-                  <Font name="System Bold" size="38.0" />
+                  <Font name="System Bold" size="29.0" />
                </font>
             </Text>
          </children></AnchorPane>
@@ -39,35 +39,45 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <Button layoutX="32.0" layoutY="29.0" mnemonicParsing="false" onAction="#clickOnIANormale" prefHeight="31.0" prefWidth="95.0" text="NORMAL" />
+         </children></AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <ImageView fitHeight="127.0" fitWidth="127.0" layoutX="7.0" layoutY="53.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../img/IA2.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
       <AnchorPane id="fondGris" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/Style.css" GridPane.rowIndex="1" />
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
          <children>
-            <ImageView fitHeight="148.0" fitWidth="156.0" layoutX="-60.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="127.0" fitWidth="127.0" layoutY="44.0" pickOnBounds="true">
                <image>
-                  <Image url="@../img/ia.gif" />
+                  <Image url="@../img/IA3.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
          <children>
-            <ImageView fitHeight="127.0" fitWidth="131.0" layoutX="66.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="127.0" fitWidth="131.0" layoutX="8.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/2j.png" />
+                  <Image url="@../img/IA1.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
          <children>
-            <Button layoutX="83.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#clickOn2Joueurs" prefHeight="31.0" prefWidth="95.0" text="2 JOUEURS" />
+            <Button layoutX="33.0" layoutY="29.0" mnemonicParsing="false" onAction="#clickOnIAFacile" prefHeight="31.0" prefWidth="95.0" text="FACILE" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
          <children>
-            <Button layoutX="-24.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#clickOnIA" prefHeight="31.0" prefWidth="95.0" text="IA" />
+            <Button layoutX="32.0" layoutY="29.0" mnemonicParsing="false" onAction="#clickOnIADifficile" prefHeight="31.0" prefWidth="95.0" text="DIFFICILE" />
          </children>
       </AnchorPane>
    </children>

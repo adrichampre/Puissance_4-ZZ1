@@ -60,15 +60,12 @@ public class ChoixController implements Initializable {
     @FXML
     private void clickOn2Joueurs(MouseEvent event) throws IOException {
         mediaplayer.play();
-        
-        
-        //Principale.changerFenetre("/ressource/fxml/Grillev2.fxml", getClass());
        
         Stage stage = Principale.getStage();
         stage.close();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Grille.fxml"));
-        loader.setController(new GrilleController(new Joueur("Joueur 1", 'R'),new Joueur("Joueur 2", 'J')));
+        loader.setController(new GrilleController(new Joueur("Joueur Rouge", 'R'),new Joueur("Joueur Jaune", 'J')));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
@@ -78,14 +75,16 @@ public class ChoixController implements Initializable {
     @FXML
     private void clickOnIA(MouseEvent event) throws IOException {
         mediaplayer.play();
-        Stage stage = Principale.getStage();
+        
+        Principale.changerFenetre("/ressource/fxml/IA.fxml", getClass());
+        /*Stage stage = Principale.getStage();
         stage.close();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Grille.fxml"));
-        loader.setController(new GrilleController(new Joueur("Joueur 1", 'R'),new IADefense("Skynet", 'J')));
+        loader.setController(new GrilleController(new Joueur("Joueur 1", 'R'),new IADefense("IA", 'J')));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
     } 
 }
