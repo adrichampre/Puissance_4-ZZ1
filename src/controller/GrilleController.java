@@ -72,7 +72,12 @@ public class GrilleController implements Initializable {
                 showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
                 Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
             }
-            else
+            if(jeu.grillePleine())
+            {
+                showMessage(Alert.AlertType.INFORMATION, null, "Egalité parfaite !",ButtonType.OK);
+                Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
+            }
+            if(!jeu.gagner() && !jeu.grillePleine())
             {
                 jeu.changementTour();
                 if(jeu.getJCourant().getClass() != Joueur.class)
@@ -87,7 +92,12 @@ public class GrilleController implements Initializable {
                         showMessage(Alert.AlertType.INFORMATION, null, "Victoire de "+jeu.getJCourant().getPseudo(),ButtonType.OK);
                         Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
                     }
-                    else
+                    if(jeu.grillePleine())
+                    {
+                        showMessage(Alert.AlertType.INFORMATION, null, "Egalité parfaite !",ButtonType.OK);
+                        Principale.changerFenetre("/ressource/fxml/Menu.fxml", getClass());
+                    }
+                    if(!jeu.gagner() && !jeu.grillePleine())
                     {
                         jeu.changementTour();
                     }
