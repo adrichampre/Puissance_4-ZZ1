@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/adrien/Bureau/Puissance4/src/model/Joueur.java</file>
+            <file>file:/home/adrien/Bureau/Puissance4/src/controller/MenuController.java</file>
+            <file>file:/home/adrien/Bureau/Puissance4/src/model/IADefense.java</file>
             <file>file:/home/adrien/Bureau/Puissance4/src/controller/GrilleController.java</file>
             <file>file:/home/adrien/Bureau/Puissance4/src/controller/ChoixController.java</file>
-            <file>file:/home/adrien/Bureau/Puissance4/src/model/IAFort.java</file>
-            <file>file:/home/adrien/Bureau/Puissance4/src/model/Jeu.java</file>
-            <file>file:/home/adrien/Bureau/Puissance4/src/model/Grille.java</file>
-            <file>file:/home/adrien/Bureau/Puissance4/src/core/Principale.java</file>
-            <file>file:/home/adrien/Bureau/Puissance4/src/ressource/css/Style.css</file>
+            <file>file:/home/adrien/Bureau/Puissance4/src/controller/ReglesController.java</file>
+            <file>file:/home/adrien/Bureau/Puissance4/src/controller/IAController.java</file>
         </group>
     </open-files>
 </project-private>

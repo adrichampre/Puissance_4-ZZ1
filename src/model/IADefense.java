@@ -100,7 +100,7 @@ public class IADefense extends Joueur
         for (int i = 1; i < 4; i++) {
             if( (line-i) >= 0 )
             {
-                if(grille.getGrille()[line-i][col].getCouleur() != couleur && grille.getGrille()[line-i][col].getCouleur() != '0')
+                if(grille.getGrille()[line-i][col].getCouleur() != couleur)
                 {
                     poids++;
                 }

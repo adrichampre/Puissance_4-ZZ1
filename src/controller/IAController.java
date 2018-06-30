@@ -29,7 +29,7 @@ import model.Joueur;
 /**
  * FXML Controller class
  *
- * @author User
+ * @author adchampred
  */
 public class IAController implements Initializable {
 
