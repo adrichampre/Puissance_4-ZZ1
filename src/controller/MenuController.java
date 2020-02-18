@@ -38,26 +38,26 @@ public class MenuController implements Initializable {
     
     @FXML
     private void handleButtonJouer(ActionEvent event) throws IOException {
-        try {
+        /*try {
             mediaBouton = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         mediaplayerBouton = new MediaPlayer(mediaBouton);
         mediaplayerBouton.play();
-        mediaplayerJeu.stop();
+        mediaplayerJeu.stop();*/
         Principale.changerFenetre("/ressource/fxml/Choix.fxml", getClass());
     }
     
     @FXML
     private void handleButtonRegles(ActionEvent event) throws IOException {
-        try {
+        /*try {
             mediaBouton = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         mediaplayerBouton = new MediaPlayer(mediaBouton);
-        mediaplayerBouton.play();
+        mediaplayerBouton.play();*/
         
         Stage stage= new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ressource/fxml/Regles.fxml"));
@@ -71,24 +71,24 @@ public class MenuController implements Initializable {
     
     @FXML
     private void handleButtonQuitter(ActionEvent event) {
-        try {
+        /*try {
             mediaBouton = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         mediaplayerBouton = new MediaPlayer(mediaBouton);
-        mediaplayerBouton.play();
+        mediaplayerBouton.play();*/
         Principale.getStage().close();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
+        /*try {
             mediaJeu = new Media(getClass().getResource("/ressource/music/jeuTheme.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
         mediaplayerJeu = new MediaPlayer(mediaJeu);
-        mediaplayerJeu.play();
+        mediaplayerJeu.play();*/
     } 
 }

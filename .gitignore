@@ -1,2 +1,6 @@
 dist/*
 build/*
+test
+nbproject/build-impl.xml nbproject/configs nbproject/genfiles.properties nbproject/jfx-impl.xml nbproject/private nbproject/project.properties nbproject/project.xml
+build.xml
+manifest.mf
