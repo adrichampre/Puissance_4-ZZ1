@@ -38,17 +38,17 @@ public class IAController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         try {
+         /*try {
             media = new Media(getClass().getResource("/ressource/music/bouton.mp3").toURI().toString());
         } catch (URISyntaxException ex) {
             Logger.getLogger(ChoixController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        mediaplayer = new MediaPlayer(media);
+        mediaplayer = new MediaPlayer(media);*/
     }    
     
     @FXML
     private void clickOnIAFacile(ActionEvent event) throws IOException {
-        mediaplayer.play();
+        //mediaplayer.play();
         Stage stage = Principale.getStage();
         stage.close();
 
@@ -62,7 +62,7 @@ public class IAController implements Initializable {
     
     @FXML
     private void clickOnIANormale(ActionEvent event) throws IOException {
-        mediaplayer.play();
+        //mediaplayer.play();
         Stage stage = Principale.getStage();
         stage.close();
 
@@ -76,7 +76,7 @@ public class IAController implements Initializable {
     
     @FXML
     private void clickOnIADifficile(ActionEvent event) throws IOException {
-        mediaplayer.play();
+        //mediaplayer.play();
         Stage stage = Principale.getStage();
         stage.close();
 
@@ -90,7 +90,7 @@ public class IAController implements Initializable {
     
     @FXML
     private void clickOnRetour(ActionEvent event) throws IOException {
-        mediaplayer.play();
+        //mediaplayer.play();
         Principale.changerFenetre("/ressource/fxml/Choix.fxml", getClass());
     }
     
